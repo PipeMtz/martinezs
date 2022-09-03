@@ -3,22 +3,45 @@ body{
     box-sizing: border-box;
     
 }
-.table1{
 
+.logo{
+    vertical-align: bottom;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    height: 40px;
+    width: 40px;
 }
+#tableTitle{
 
-.body1 td{
     text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
-tr>th {background-color: purple;color: white;}
+#onepiece{
+    border-collapse: collapse;
+    width: 100%;
+
+}
+#onepiece th, #onepiece td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 1.3em;
+}
+
+#onepiece tr:nth-child(even) {background-color: rgb(230, 230, 230);}
+
+#onepiece tr:hover{background-color: #ddd;}
+
+#onepiece th{
+    background-color: #ff4848;
+    color: white;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 td:active{background-color:blue; color: white;}
         
-tbody tr:nth-of-type(odd) {background-color: gray;}
 
-tbody > tr:hover {background-color: red;}  
-
-td{
-    font-size: medium;
-}
