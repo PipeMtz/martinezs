@@ -34,10 +34,13 @@ ul > li:hover > ul{
     display: block;
     height: 100%;
 
-
+    transition: ease-in-out;
    
 }
 
+.opcion li.subOpcion{
+    width: 30px;
+}
 
 .opcion{
     border: 1px solid black;
@@ -45,6 +48,9 @@ ul > li:hover > ul{
     margin: 10px;
     width: 100px;
 
+    transition: 0.2s all;
+    display: flex;
+    flex-flow: column;
 
 }
 h1{
