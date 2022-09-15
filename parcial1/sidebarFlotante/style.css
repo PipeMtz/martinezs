@@ -7,31 +7,20 @@ body{
     width: 100vw;
     height: 100vh;
 
-
-}
-.contenedor{
-    display: flex;
-    flex-flow: row;
-    height: 100%;
-    width: 100%;
 }
 div.sidebar{
 
-
+    position: fixed;
     height: auto;
     width: 100px;
     height: 100%;
     overflow: auto;
 
-    display: flex;
-    flex-flow: column;
-    
-
     background-color: lightgray;
 
 }
 .sidebar a{
-
+    float: left;
     margin: 10px;
     padding: 5px;
 }
@@ -42,33 +31,32 @@ div.content{
     padding: 1px 16px;
     height: 1500px;
 }
+.content p{
 
+}
 a{
-
+    display: block;
     text-decoration: none;
     padding: 0;
 }
 
 .contenidoOpcion{display: block;}
 
-@media screen and (max-width: 1200px) {
-    .contenedor{
-        flex-flow: column;
+@media screen and(max-width: 1200px) {
+    div.sidebar{
+
+        position: relative;
         width: 100%;
+        height: auto;
 
     }
-    div.sidebar{
-        width: 100%;
-        height: 400px;
-        flex-direction: row;
-    }
+
+    .sidebar a{float: left;}
+    div.content {margin-left: 0px;}
 }
 @media screen and (max-width:600px) {
-    .contenedor{
-        flex-flow: column;
-    }
-    div.sidebar{
-        flex-flow: column;
-        height: 600px;
+    .sidebar a{
+        float: none;
+        text-align: center;
     }
 }
