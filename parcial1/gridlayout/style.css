@@ -54,28 +54,42 @@ a:link{
 }
 .contenedor{
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 50% 50%;
+    width: 100%;
+    height: 80%;
+    grid-template-columns: 10% 45% 45% ;
+    grid-template-rows: 10% 40% 40% 10%;
 
-    justify-content: center;
-    align-items: center;
+    grid-template-areas:'enc enc enc'
+                        'col1 col1 menulat'
+                        'col2 col2 menulat'
+                        'pie pie pie';
+
+    justify-content: stretch;
+    align-items: stretch;
+    align-content: stretch;
+    justify-items: stretch;
 }
 #caja1{
-    grid-column: 1/3;
+    /* grid-column: 1/3;
     grid-row: 1/3;
-
-    width: 300px;
-    height: 300px;
+ */
+   /*  width: 300px;
+    height: 300px; */
 }
 #caja8{
-    grid-column: 3/5;
-    width: 300px;
+   /*  grid-column: 3/5; */
+    /* width: 300px; */
 }
+#enc{grid-area: enc;}
+#menulat{grid-area:menulat ;}
+#col1{grid-area:col1 ;}
+#col2{grid-area:col2 ;}
+#pie{grid-area:pie ;}
 .caja{
-    justify-self: center;
-    height: 100px;
+    justify-self: stretch;
+    /* height: 100px;
     width: 100px;
-    margin: 20px;
+    margin: 20px; */
     background-color: rgb(144, 79, 198);
     border: 1px solid black;
     display: flex;
@@ -98,4 +112,19 @@ a:link{
 
     box-shadow: none;
     transform: translate(8px,8px);
+}
+
+
+@media screen and (max-width:1000px) {
+    .contenedor{
+    grid-template-columns: 100%;
+    grid-template-rows: 200px;
+    
+    max-width: 100vw;
+    grid-template-areas:'enc'
+                        'menulat' 
+                        'col1' 
+                        'col2'
+                        'pie';
+    }
 }
