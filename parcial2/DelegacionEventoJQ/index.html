@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav class="menu">
             <div class="logo">
                 <h1>Logo</h1>
@@ -20,7 +21,7 @@
             </div>
         </nav>
     </header>
-    <div class="contenedor">
+    <div class="contenedor" id="contmain">
         <div id="enc" class="caja">Header</div>
         <div id="menulat" class="caja">Menu lateral</div>
         <div id="col1" class="caja">Columna 1</div>
@@ -30,6 +31,15 @@
         
     </div>
    
+    
 </body>
-<script src="index.js"></script>
+<script src="jquery-3.6.1.min.js"></script>
+<script>
+         $(document).ready(function(){
+            $("#contmain").click(function(event){
+                console.log("Evento");
+                $(event.target).html("Evento delegacion");
+            })
+        })
+</script>
 </html>
