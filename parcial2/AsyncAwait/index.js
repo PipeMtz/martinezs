@@ -13,3 +13,9 @@ document.querySelector("#btnPeticionJQ").addEventListener("click", function(){
     })
 })
 
+document.querySelector("#btnPeticionAsync").addEventListener("click",async function(){
+
+    let respuesta = await fetch("https://api.chucknorris.io/jokes/random")
+    console.log(respuesta);
+
+})
