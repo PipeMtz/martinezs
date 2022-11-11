@@ -16,6 +16,8 @@ document.querySelector("#btnPeticionJQ").addEventListener("click", function(){
 document.querySelector("#btnPeticionAsync").addEventListener("click",async function(){
 
     let respuesta = await fetch("https://api.chucknorris.io/jokes/random")
-    console.log(respuesta);
+    let datoJson = await respuesta.json();
+    console.log(datoJson.value);
+    document.querySelector("#caja").innerText = datoJson.value + "\nPETICION POR FETCH ASYNC";
 
 })
