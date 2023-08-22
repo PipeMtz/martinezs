@@ -18,9 +18,11 @@ function fetchPokemon(){
                         const pokemonName = data.name;
                         const pokemonWeight = data.weight;
                         const pokemonTypes = data.types.map(type => type.type.name).join(', ');
+                        const pokemonImage = data.sprites.front_default;
                         document.getElementById('pokemonName').textContent = pokemonName;
-                        document.getElementById('pokemonWeight').textContent = (pokemonWeight) + " kg";
+                        document.getElementById('pokemonWeight').textContent = (pokemonWeight) + " lb";
                         document.getElementById('pokemonTypes').textContent = pokemonTypes;
+                        document.getElementById('image').src = pokemonImage;
                     })
                     .catch(err => console.error(err));   
 }
