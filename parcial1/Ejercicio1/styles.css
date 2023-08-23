@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #e44029; /* Rojo de Pokémon */
+}
+
+button {
+    background-color: #007acc; /* Azul de Pokémon */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005ca9; /* Azul más oscuro de Pokémon */
+}
+
+p {
+    margin: 10px 0;
+    color: #333;
+}
+
+strong {
+    font-weight: bold;
+    color: #e44029; /* Rojo de Pokémon */
+}
+
+#image {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilos para los botones */
+#fetchXML {
+    background-color: #e44029; /* Rojo de Pokémon */
+}
+
+#fetchPromise {
+    background-color: #fbb040; /* Amarillo de Pokémon */
+}
+
+#fetchAsync {
+    background-color: #55c4ec; /* Azul claro de Pokémon */
+}
+
+#fetchJQUERY {
+    background-color: #b9b9b9; /* Gris de Pokémon */
+}
+
+#fetchAxios {
+    background-color: #4b9e72; /* Verde de Pokémon */
+}
+
