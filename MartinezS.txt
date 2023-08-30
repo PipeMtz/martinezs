@@ -1,3 +1,2 @@
 https://github.com/PipeMtz/martinezs
 
-https://www.npmjs.com/package/onepiecequotes
