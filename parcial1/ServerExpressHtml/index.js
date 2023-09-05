@@ -1,18 +1,20 @@
 var p;
 
-document.getElementById("btn").addEventListener("click", getFunction());
+document.getElementById("btn").addEventListener("click", getFunction);
 
-function getFunction(){
+async function getFunction(){
 
-    fetch("localhost:8000/alumnos/sistemas")
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("pGet").innerHTML = data;
-    })
-    .catch(err => console.error(err));   
+    console.log("si jala el boton")
+    
+
+        const response = await fetch('http://localhost:8000/alumnos/sistemas')
+        const data = await response.json()
+
+        console.log(data)
+    }
 
 
 
-}
+
 
   

@@ -3,16 +3,15 @@ import express from "express";
 const server = express();
 
 
-server
-  .use(express.json())
-  .get("/alumnos/:carrera", (req, res) => {
-    console.log(req.params);
-    console.log(req.query);
-    console.log(req.body);
+server.use(express.json())
 
-    res.send("Servidor express contestando GET");
-  })
-  .post("/alumnos", (req, res) => {
+server.get("/alumnos/:nombre",(req,res)=>{
+  res.send("Ruta de nombres, esta peticion evita CORS")
+})
+
+
+
+ server.post("/alumnos", (req, res) => {
     //res.send("Servidor express contestando GET");
     const {nombre} = req.body
     res.send(nombre)

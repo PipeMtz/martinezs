@@ -12,12 +12,13 @@
     <button id="btn">Get</button>
     <script src="index.js"></script>
 
-    <form action="POST">
-        <input type="text" name="Nombre" id="name">
-        <input type="text" name="ApellidoPaterno" id="apellidop">
+    <form action="http://localhost:8000/alumnos/felipe" method="get" target="Resultado">
+        <input type="text" name="nombre">
+        <!-- <input type="text" name="ApellidoPaterno" id="apellidop">
         <input type="text" name="ApellidoMaterno" id="apellidom">
-        <input type="text" name="Edad" id="age">
+        <input type="text" name="Edad" id="age"> -->
         <button type="submit">Send</button>
     </form>
+    <iframe name="Resultado" frameborder="0"></iframe>
 </body>
 </html>
