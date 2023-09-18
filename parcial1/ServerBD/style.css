@@ -1,0 +1,11 @@
+#tabla{
+    display: grid;
+    grid-column: auto;
+    box-shadow:1px;
+}
+
+
+
+p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
