@@ -3,6 +3,8 @@ const events = require('events');
 
 function Saludar(){
     const emisor = new events.EventEmitter();
+    setTimeout(()=>emisor.emit('saluda','Tu'),1000)
+    setTimeout(()=>emisor.emit('saluda','Eres?'),2000)
     setTimeout(()=>emisor.emit('saluda','Juan'),5000)
     return emisor
 }
