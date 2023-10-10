@@ -1,6 +1,5 @@
-import joi from 'joi'
 import express from 'express'
-
+import { schema } from './schema.js'
 const app = express()
 
 app.use(express.json())
@@ -22,16 +21,4 @@ app.use(express.json())
     .listen(3000,()=>{
         console.log('Server on port 3000')
     })
-
-const schema = joi.object({
-    nombre: joi.string().required(),
-    edad: joi.number().required(),
-    email: joi.string().email().required(),
-})
-
-const data = {
-    nombre: "Juan",
-    edad: 25,
-    email: "juanec.com"
-}
 
