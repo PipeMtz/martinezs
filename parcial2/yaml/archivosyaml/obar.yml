@@ -1,0 +1,8 @@
+persona:
+  nombre: Felipe Martinez
+  edad: 22
+  ocupacion: Desarrollador
+  direccion:
+    calle: Reforma 1000
+    ciudad: Ciudad Gotica
+    estado: Estado happy

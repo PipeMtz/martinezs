@@ -5,12 +5,13 @@
   "description": "This module is for getting random One Piece Quotes",
   "main": "index.js",
   "scripts": {
-    "generate-docs" : "jsdoc"
+    "generate-docs": "jsdoc --configure jsdoc.json --verbose"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "clean-jsdoc-theme": "^4.2.14",
     "jsdoc": "^4.0.2"
   }
 }
