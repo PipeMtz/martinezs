@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CRUD con MYSQL</h1>
+
+    <p>Consultar Nombre</p>
+    <input type="text" id="itemInput" placeholder="Enter an id">
+    <button id="btn" >Get Name</button>
+    <p id="output"></p>
+   
+    <p>Ingresar Nombre</p>
+    <input type="text" id="nameInput" placeholder="Enter a new Name">
+    <button id="btnName" >Add Name</button>
+    
+    <p>Modificar Nombres</p>
+    <input type="text" id="newIdInput" placeholder="Enter ID to change">
+    <input type="text" id="newNameInput" placeholder="Enter a new Name">
+    <button id="btnNewName" >Change Name</button>
+
+    <p>Dar de baja Nombre</p>
+    <input type="text" id="deleteInput" placeholder="Enter an ID to Eliminate">
+    <button id="btnDelete" >Delete Name</button>
+
+    <div id="tabla">
+        <div>
+            <p>Tabla</p>
+            <p id="tableData"></p>
+        </div>
+    </div>
+    <button id="tableBtn">Fill</button>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
