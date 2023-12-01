@@ -2,6 +2,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 const suma = require('./module');
+const { app } = require('./server')
+
 
 describe('My Module', function () {
     it('debería sumar dos números correctamente', function () {
