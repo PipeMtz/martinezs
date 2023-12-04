@@ -133,7 +133,7 @@ app.get("/fill", (req, res) => {
 });
 
 app.post("/alumnos/", (req, res) => {
-  var query = `insert into sys.Nombres(Nombre) values ("${req.body.name}");`;
+  var query = `insert into Alumnos(Nombre) values ("${req.body.name}");`;
   console.log(query);
   connection.query(query, function (err, results) {
     // console.log(results); // results contains rows returned by app
@@ -143,7 +143,7 @@ app.post("/alumnos/", (req, res) => {
 });
 
 app.post("/alumnos/update", (req, res) => {
-  var query = `update sys.Nombres set Nombre =  "${req.body.name}" where id = ${req.body.id};`;
+  var query = `update Alumnos set Nombre =  "${req.body.name}" where id = ${req.body.id};`;
   console.log(query);
   connection.query(query, function (err, results) {
     // console.log(results); // results contains rows returned by app
@@ -154,7 +154,7 @@ app.post("/alumnos/update", (req, res) => {
 
 app
   .delete("/alumnos/delete", (req, res) => {
-    var query = `delete from sys.Nombres where id = ${req.body.id}`;
+    var query = `delete from Alumnos where id = ${req.body.id}`;
 
     console.log(query);
     connection.query(query, function (err, results) {
