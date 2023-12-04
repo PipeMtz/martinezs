@@ -1,135 +1,3 @@
-// import express from "express";
-// import pg from "pg";
-// import cors from "cors";
-// import swaggerUi from "swagger-ui-express";
-// import swaggerJSDoc from "swagger-jsdoc";
-// import { readFileSync } from "fs";
-// import redoc from "redoc-express";
-
-// const { Pool } = pg; // Destructure the Pool from the pg library
-
-// const app = express();
-
-// const sw = JSON.parse(readFileSync("./swagger.json", "utf8"));
-
-// const options = {
-//   definition: sw,
-//   apis: ["./server.js"],
-// };
-
-// const swaggerDOCS = swaggerJSDoc(options);
-
-// app.use("/api-docs", swaggerUi.serve);
-// app.get("/api-docs", swaggerUi.setup(swaggerDOCS));
-
-// app.get("/api-docs-json", (_, res) => {
-//   res.json(swaggerDOCS);
-// });
-
-// app.get(
-//   "/docs",
-//   redoc({
-//     title: "API Docs",
-//     specUrl: "/api-docs-json",
-//     nonce: "",
-//     redocOptions: {
-//       theme: {
-//         colors: {
-//           primary: {
-//             main: "#6EC5AB",
-//           },
-//         },
-//         typography: {
-//           fontFamily: `"museo-sans", 'Helvetica Neue', Helvetica, Arial, sans-serif`,
-//           fontSize: "15px",
-//           lineHeight: "1.5",
-//           code: {
-//             code: "#87E8C7",
-//             backgroundColor: "#4D4D4E",
-//           },
-//         },
-//         menu: {
-//           backgroundColor: "#ffffff",
-//         },
-//       },
-//     },
-//   })
-// );
-
-// app.use(express.json());
-// app.use(cors());
-
-// const pool = new Pool({
-//   PGUSER: "postgres",
-//   PGHOST: "monorail.proxy.rlwy.net",
-//   PGDATABASE: "railway",
-//   PGPASSWORD: "Eag2bDa32eafD5fG41*b3GGf3D1d*543",
-//   PGPORT: 50034,
-//   PGDATA: '/var/lib/postgresql/data/pgdata'
-// });
-
-// app.get("/alumnos/:id", async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const result = await pool.query(`SELECT * FROM Alumnos WHERE id = $1`, [id]);
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
-// app.get("/fill", async (req, res) => {
-//   try {
-//     const result = await pool.query(`SELECT * FROM Alumnos`);
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
-// app.post("/alumnos/", async (req, res) => {
-//   const { name } = req.body;
-
-//   try {
-//     const result = await pool.query(`INSERT INTO sys.Nombres(Nombre) VALUES ($1) RETURNING *`, [name]);
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
-// app.post("/alumnos/update", async (req, res) => {
-//   const { id, name } = req.body;
-
-//   try {
-//     const result = await pool.query(`UPDATE sys.Nombres SET Nombre = $1 WHERE id = $2 RETURNING *`, [name, id]);
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
-// app.delete("/alumnos/delete", async (req, res) => {
-//   const { id } = req.body;
-
-//   try {
-//     const result = await pool.query(`DELETE FROM sys.Nombres WHERE id = $1 RETURNING *`, [id]);
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
-// app.listen(8000, () => {
-//   console.log("El servidor express escuchando");
-// });
-
 
 import express from "express";
 import mysql from "mysql2";
@@ -218,15 +86,16 @@ app.get(
 app.use(express.json());
 app.use(cors());
 // create the connection to database
-const connection = mysql.createPool(
-  "mysql://root:cAH1Cf-h3h-3h113HccC6a-AheGcc23E@monorail.proxy.rlwy.net:28136/railway"
-);
-// const connection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   database: "sys",
-//   password: "password",
-// });
+// const connection = mysql.createPool(
+//   "mysql://root:cAH1Cf-h3h-3h113HccC6a-AheGcc23E@monorail.proxy.rlwy.net:28136/railway"
+// );
+const connection = mysql.createConnection({
+  host: "monorail.proxy.rlwy.net",
+  user: "root",
+  database: "railway",
+  password: "cAH1Cf-h3h-3h113HccC6a-AheGcc23E",
+  port: '28136'
+});
 
 app.get("/alumnos/:id", (req, res) => {
   // const {id} = req.params.id;
