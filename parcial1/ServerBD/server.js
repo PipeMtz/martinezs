@@ -2,7 +2,7 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 
-import { createPool } from "mysql2/promise";
+// import mysql from "mysql2";
 const server = express();
 
 server.use(express.json());
@@ -16,7 +16,7 @@ server.use(cors());
 //   database: 'railway',
 
 // });
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: "localhost",
   user: "root",
   database: "sys",
@@ -39,7 +39,7 @@ server.get("/fill", (req, res) => {
 
   var query = `SELECT * FROM Nombres`;
   console.log(query);
-  connection.query(query, function (err, results, fields) {
+  connection.execute(query, function (err, results, fields) {
     // console.log(results); // results contains rows returned by server
     // console.log(fields); // fields contains extra meta data about results, if available
     res.json(results);
